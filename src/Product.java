@@ -10,6 +10,10 @@ public class Product {
         setPrice(price);
         setWeight(weight);
     }
+    public Product(String name, double price) {
+        setName(name);
+        setPrice(price);
+    }
 
     public String getName() {
         return name;

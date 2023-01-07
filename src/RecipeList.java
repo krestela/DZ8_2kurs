@@ -1,14 +1,15 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class RecipeList {
-    private Set<Recipe> recipes;
+    private HashMap<Recipe, Objects> recipes;
 
     public void addRecipe(Recipe recipe) {
-        if (recipes.contains(recipe)) {
+        if (recipes.containsKey(recipe)) {
             throw new IllegalArgumentException("Такой рецепт уже есть");
         }
-        recipes.add(recipe);
+        recipes.get(recipe);
     }
 
     public void remove(Recipe recipe) {
