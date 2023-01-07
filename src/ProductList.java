@@ -5,40 +5,44 @@ import java.util.Set;
 
 public class ProductList {
     private final Map<Product, Integer> products = new HashMap<>();
+
     public void main(String[] args) {
         products.put(new Product("Банан", 15), 2);
 
+
+    }
+
+    public void getTotalCost() {
         double total = 0.0;
         for (Map.Entry<Product, Integer> product : products.entrySet()) {
             total += product.getKey().getPrice() * product.getValue();
             System.out.println("Продукт: " + product.getKey().getName() + " - " + product.getValue() + " kg. Cтоимость: " + total + " рублей.");
         }
-
     }
 
-    public void checkProduct(String name){
+    public void checkProduct(String name) {
         boolean isBought = false;
-        for (Map.Entry<Product, Integer> product : products.entrySet()){
-            if (product.getKey().getName().equals(name)){
+        for (Map.Entry<Product, Integer> product : products.entrySet()) {
+            if (product.getKey().getName().equals(name)) {
                 System.out.println(name + " продукт куплен");
                 isBought = true;
                 break;
             }
         }
-        if (!isBought){
+        if (!isBought) {
             System.out.println(name + "не куплен");
         }
     }
 
-    public void addProductToList(Product product){
-        if (product == null){
+    public void addProductToList(Product product) {
+        if (product == null) {
             return;
         }
-        if (this.products.containsKey(product)){
+        if (this.products.containsKey(product)) {
             Integer productCount = this.products.get(product);
             this.products.put(product, ++productCount);
-        }else {
-            this.products.put(product,1);
+        } else {
+            this.products.put(product, 1);
         }
     }
 }

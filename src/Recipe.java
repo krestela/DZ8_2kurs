@@ -1,13 +1,11 @@
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 public class Recipe {
     private String name;
     private ProductList productList;
-    private int totalCost;
+    private double totalCost;
 
-    public Recipe(String name, ProductList productList, int totalCost) {
+    public Recipe(String name, ProductList productList, double totalCost) {
         this.name = name;
         this.productList = productList;
         this.totalCost = totalCost;
@@ -21,8 +19,8 @@ public class Recipe {
         return productList;
     }
 
-    public int getTotalCost() {
-        return totalCost;
+    public double getTotalCost(double totalCost) {
+        return getTotalCost(this.totalCost);
     }
 
     @Override
@@ -38,4 +36,12 @@ public class Recipe {
         return Objects.hash(name);
     }
 
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "name='" + name + '\'' +
+                ", productList=" + productList +
+                ", totalCost=" + totalCost +
+                '}';
+    }
 }
