@@ -19,8 +19,8 @@ public class Recipe {
         return productList;
     }
 
-    public double getTotalCost(double totalCost) {
-        return getTotalCost(this.totalCost);
+    public double getTotalCost() {
+        return productList.countTotalCost();
     }
 
     @Override

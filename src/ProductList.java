@@ -12,12 +12,13 @@ public class ProductList {
 
     }
 
-    public void getTotalCost() {
+    public double countTotalCost() {
         double total = 0.0;
         for (Map.Entry<Product, Integer> product : products.entrySet()) {
             total += product.getKey().getPrice() * product.getValue();
             System.out.println("Продукт: " + product.getKey().getName() + " - " + product.getValue() + " kg. Cтоимость: " + total + " рублей.");
         }
+        return total;
     }
 
     public void checkProduct(String name) {
